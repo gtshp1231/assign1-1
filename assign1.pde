@@ -63,7 +63,7 @@ void draw() {
   } else {
     if (rolling){
       rolling = false;
-      // stop rolling
+      // stop  rolling
       // -------------------------------------------------
       // put your code inside here
         int result = machine.probability(0.9); // The probability of "0" is 10%.
