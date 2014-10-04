@@ -66,10 +66,14 @@ void draw() {
       // stop  rolling
       // -------------------------------------------------
       // put your code inside here
-        int result = machine.probability(0.5); // The probability of "0" is 50%.
-        int a = int(random(5)) + result; // Choose the fruits randomly, and result may be "0"(50%) or "1"(50%).
-        int b = int(random(5)) + result; // If result = 1, fruitId = 1~5. If result = 0, fruitId = 0~4.
-        int c = int(random(5)) + result; // It means the probability of Lucky Seven's appearance is 10% (20%(random fruitId) * 50%(result)).
+        int result = machine.probability(0.5); 
+        // The probability of "0" is 50%.
+        int a = int(random(5)) + result; 
+        int b = int(random(5)) + result; 
+        int c = int(random(5)) + result; 
+        // Choose the fruits randomly, and result may be "0"(50%) or "1"(50%).
+        // If result = 1, fruitId = 1~5. If result = 0, fruitId = 0~4.
+        // It means the probability of Lucky Seven's appearance is 10% (20%(random fruitId) * 50%(result)).        
         machine.setSlotFruit(0,a); // set fruits into each slots
         machine.setSlotFruit(1,b);
         machine.setSlotFruit(2,c);
