@@ -10,7 +10,9 @@ int h = 50;
 // declare variables
 // --------------------------------------------
 // put your code inside here
-int totalScore = 0;
+int totalScore = 500;
+
+
 
 // --------------------------------------------
 
@@ -48,7 +50,9 @@ void draw() {
       // start rolling
       // -------------------------------------------------
       // put your code inside here
-      
+        totalScore -= 50;
+
+        
       
       // -------------------------------------------------
     }
@@ -62,12 +66,24 @@ void draw() {
       // stop rolling
       // -------------------------------------------------
       // put your code inside here
+        int result = machine.probability(0.9); // The probability of "0" is 10%.
+        int a = int(random(5)) + result; // Choose the fruits randomly, and it may come out to be "0"(10%) or "1"(90%).
+        int b = int(random(5)) + result; // If result = 1, fruitId = 1~5. If result = 0, fruitId = 0~4.
+        int c = int(random(5)) + result; // It means the probability of lucky seven's appearance is 10%.
+        machine.setSlotFruit(0,a); // set fruits into each slots
+        machine.setSlotFruit(1,b);
+        machine.setSlotFruit(2,c);
+        float m = sq(machine.getFruitCount(0)) * 60; // (the number of fruits) * (multiple) * (score)
+        float n = sq(machine.getFruitCount(1)) * 10;
+        float o = sq(machine.getFruitCount(2)) * 20;
+        float p = sq(machine.getFruitCount(3)) * 30;
+        float q = sq(machine.getFruitCount(4)) * 40;
+        float r = sq(machine.getFruitCount(5)) * 50;
+        totalScore += m + n + o + p + q + r; // plus all scores
+        
+ 
       
- 
- 
- 
-      
-      // -------------------------------------------------
+      // ------------------------------------------------
     }
     machine.stop();
     fill(253,253,253);
@@ -83,7 +99,6 @@ void mousePressed() {
     button = !button;
   }  
 }
-
 
 
 
